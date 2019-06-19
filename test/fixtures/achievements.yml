@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  achievement: MyString
+  note: MyText
+  date: 2019-06-18
+  image: MyString
+
+two:
+  achievement: MyString
+  note: MyText
+  date: 2019-06-18
+  image: MyString

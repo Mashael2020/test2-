@@ -1,0 +1,32 @@
+<h1>Achievements#edit</h1>
+<p>Find me in app/views/achievements/edit.html.erb</p>
+
+<%= form_for @achievement, url: {action: "update"} do |f|%>
+    
+
+
+
+    <div class="field">
+    <%= f.label :achievement%> <br />
+    <%= f.text_field :achievement %>
+  </div>
+  
+       <div class="field">
+         <%= f.label :note%><br />
+         <%= f.text_field :note %>
+       </div>
+      
+       <div class="field">
+         <%= f.label :date %><br />
+         <%= f.date_field :date  %> 
+       </div>
+       <div class="field">
+         <%= f.label :image %><br />
+         <%= f.text_field :image %>
+       </div>
+      
+       <div class="actions">
+         <%= f.submit "save" %>
+       </div>
+      <% end %> 
+  

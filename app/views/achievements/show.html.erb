@@ -1,0 +1,9 @@
+<h1>Achievements#show</h1>
+<%= @achievement.achievement%>
+<%=@achievement .note %>
+<%=@achievement . date %>
+<%=@achievement . image %>
+
+<%=link_to "Edit" ,edit_achievement_path%>
+<%=link_to "Delete", achievement_path(@achievement), method: :delete%>
+ 

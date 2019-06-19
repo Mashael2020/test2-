@@ -1,0 +1,8 @@
+<h1>Achievements#index</h1>
+<% @achievements.each  do |achievement|%>
+    <%=achievement.achievement%>
+
+    <%= link_to "Show " ,   achievement_path(achievement)      %>
+    <br> 
+  
+<%end%>
