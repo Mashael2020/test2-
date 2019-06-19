@@ -6,7 +6,7 @@ class AchievementsController < ApplicationController
 
   def show 
     @achievement = Achievement.find(params[:id])
-
+    # @image =  @achievement.image.attach(params[:image])
   end 
   
 
@@ -15,7 +15,9 @@ class AchievementsController < ApplicationController
  end 
 
  def create 
-  @achievement = Achievement.create(achievements_params)
+  achievement = Achievement.create(achievements_params)
+  user = current_user.id
+  achievement.update({user_id:user})
   redirect_to achievements_path
  end 
 
@@ -37,7 +39,7 @@ end
 
 
  def achievements_params 
-   params.require(:achievement).permit(:achievement , :note , :date ,:image)
+   params.require(:achievement).permit(:achievement, :note, :date, :image)
  end 
   
 end 

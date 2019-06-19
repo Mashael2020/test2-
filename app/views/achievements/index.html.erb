@@ -1,8 +1,13 @@
 <h1>Achievements#index</h1>
 <% @achievements.each  do |achievement|%>
     <%=achievement.achievement%>
-
-    <%= link_to "Show " ,   achievement_path(achievement)      %>
-    <br> 
+    <%=achievement.note%>
+    <%=achievement.date%> 
+    <% if achievement.image.attached? %>
+    <img src= <%=(url_for(achievement.image))%>
+  <% end %> 
+<br> 
+    <%= link_to "Show ", achievement_path(achievement) %>
+    
   
 <%end%>
