@@ -1,10 +1,15 @@
-<h1>Achievements#show</h1>
-<%=@achievement.achievement%>
-<%=@achievement.note%>
-<%=@achievement.date%> 
+<h1> your Achievement</h1>
+
 <% if @achievement.image.attached? %>
-<img src= <%=(url_for(@achievement.image))%>
+<img src= "<%=(url_for(@achievement.image))%>" class="img-size"> 
 <% end %> 
+<p>
+<%=@achievement.achievement%>  
+<br>
+<%=@achievement.note%>
+<br>
+<%=@achievement.date%>  
+</p> 
 <br>
 <%=link_to "Edit" ,edit_achievement_path%>
 <%=link_to "Delete", achievement_path(@achievement), method: :delete%>

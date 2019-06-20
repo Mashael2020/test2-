@@ -9,20 +9,29 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-  <nav>
+  <body class="<%= controller_name %> <%= action_name %>">
+
+ 
+  <nav class="nav nav-container">
+  <div>
+
+      <h1>World of Achievements  </h1> 
+      </div>
+      <div>
   <%if user_signed_in? %>
-      <%= link_to "sign out" , destroy_user_session_path , method: :delete%> 
-      <%=link_to "Home " , homes_path%>
+  
+    <%=link_to "Home " , homes_path%> 
+    <%= link_to "sign out" , destroy_user_session_path , method: :delete%> 
+      
       <%= link_to "My Achievment" ,achievements_path %>
       <%= link_to "Add Achievment " ,new_achievement_path%>
       <%else%>
       <%= link_to "Login", new_user_session_path%>
-      <%= link_to "sign up" ,new_user_registration_path %>
+      <%= link_to "sign up" ,new_user_registration_path %> 
   <%end%>
-  
- 
+  </div>
   </nav>
+  
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
     <%= yield %>

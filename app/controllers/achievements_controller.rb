@@ -1,38 +1,40 @@
 class AchievementsController < ApplicationController
   
   def index 
-    @achievements = Achievement.all
+    @achievements = current_user.achievements
   end 
 
   def show 
-    @achievement = Achievement.find(params[:id])
+    @achievement = current_user.achievements.find(params[:id])
     # @image =  @achievement.image.attach(params[:image])
   end 
   
 
  def new 
-  @achievement = Achievement.new 
+  @achievement = current_user.achievements.new 
  end 
 
  def create 
-  achievement = Achievement.create(achievements_params)
-  user = current_user.id
-  achievement.update({user_id:user})
+  current_user.achievements.create(achievements_params)
   redirect_to achievements_path
  end 
 
 def edit 
-  @achievement = Achievement.find (params[:id])
+  @achievement = current_user.achievements.find(params[:id])
 end 
+
+
 def update
-  @achievement=Achievement.find(params[:id])
+  @achievement= current_user.achievements.find(params[:id])
   @achievement.update(achievements_params)
+  
+
   redirect_to achievements_path
 
 end 
  def destroy 
   
-  @achievement=Achievement.find(params[:id])
+  @achievement=current_user.achievements.find(params[:id])
   @achievement.destroy
   redirect_to achievements_path
  end 

@@ -1,5 +1,5 @@
-<h1>Achievements#new</h1>
-<p>Find me in app/views/achievements/new.html.erb</p>
+<h1>I'm so proud that you accomplished one of your goals</h1>
+
 
 <%= form_for @achievement, url: {action: "create"} do |f|%>
     
@@ -8,21 +8,21 @@
 
   <div class="field">
   <%= f.label :achievement%> <br />
-  <%= f.text_field :achievement %>
+  <%= f.text_field :achievement , :required => true %>
 </div>
 
      <div class="field">
        <%= f.label :note%><br />
-       <%= f.text_field :note %>
+       <%= f.text_field :note ,:required=> true %>
      </div>
     
      <div class="field">
        <%= f.label :date %><br />
-       <%= f.date_field :date  %> 
+       <%= f.date_field :date  ,:required=> true %> 
      </div>
      <div class="field">
        <%= f.label :image %><br />
-       <%= f.file_field :image %>
+       <%= f.file_field :image ,:required=> true%>
      </div>
     
      <div class="actions">

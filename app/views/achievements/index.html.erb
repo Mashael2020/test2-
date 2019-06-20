@@ -1,13 +1,36 @@
-<h1>Achievements#index</h1>
+<h1> Your Achievements</h1> 
+
+<div class="card-design">
 <% @achievements.each  do |achievement|%>
-    <%=achievement.achievement%>
-    <%=achievement.note%>
-    <%=achievement.date%> 
-    <% if achievement.image.attached? %>
-    <img src= <%=(url_for(achievement.image))%>
-  <% end %> 
-<br> 
-    <%= link_to "Show ", achievement_path(achievement) %>
+    <div class="card mb-3 card-width" >
+    <div class="row no-gutters">
+      <div class="col-md-4">
+      <% if achievement.image.attached? %>
+            <img src= "<%=(url_for(achievement.image))%>" class="img-size card-img" > 
+        <% end %> 
+        </div>
     
-  
+        <div class="col-md-8 text-card">
+        <div class="card-body">
+          <h5 class="card-title">   <%=achievement.achievement%>
+        </h5>
+   
+ 
+    
+    <p class="card-text"><%=achievement.note%></p>
+
+    <p class="card-text"><small class="text-muted"><%=achievement.date%> </small></p>
+
+   
+    <%= link_to "Show ", achievement_path(achievement), class: "btn btn-primary btn-md btn-block" %>
+
+    </div>
+    </div>
+</div>
+</div>
 <%end%>
+
+
+</div>  
+        
+      

@@ -8,25 +8,25 @@
 
     <div class="field">
     <%= f.label :achievement%> <br />
-    <%= f.text_field :achievement %>
+    <%= f.text_field :achievement , :required=> true%>
   </div>
   
        <div class="field">
          <%= f.label :note%><br />
-         <%= f.text_field :note %>
+         <%= f.text_field :note, :required=> true %>
        </div>
       
        <div class="field">
          <%= f.label :date %><br />
-         <%= f.date_field :date  %> 
+         <%= f.date_field :date , :required=> true %> 
        </div>
        <div class="field">
          <%= f.label :image %><br />
-         <%= f.text_field :image %>
+         <%= f.file_field :image, :required=> true %>
        </div>
       
        <div class="actions">
-         <%= f.submit "save" %>
+         <%= f.submit "update" %>
        </div>
       <% end %> 
   
